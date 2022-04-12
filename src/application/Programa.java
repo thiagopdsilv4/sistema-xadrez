@@ -20,11 +20,16 @@ public class Programa {
 				UI.ClearScreen();// chamando método para limpar a tela
 				UI.printBoard(chessMatch.getPieces());
 				System.out.println();
-				System.out.print("Source: ");
+				System.out.print("Origem: ");
 				ChessPosition source = UI.readChessPosition(sc);
-
-				System.out.print("Target: ");
-				ChessPosition target = UI.readChessPosition(sc);
+				
+				boolean[][] possibleMoves = chessMatch.possibleMoves(source);
+				UI.ClearScreen();
+				UI.printBoard(chessMatch.getPieces(), possibleMoves);
+				
+				System.out.println();
+				System.out.print("Alvo: ");
+				ChessPosition target = UI.readChessPosition(sc);				
 
 				ChessPiece capturedPiece = chessMatch.performChessMove(source, target);
 			} catch (ChessException e) {
