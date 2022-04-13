@@ -18,7 +18,7 @@ public class Programa {
 		while (true) {
 			try {
 				UI.ClearScreen();// chamando método para limpar a tela
-				UI.printBoard(chessMatch.getPieces());
+				UI.printMatch(chessMatch);
 				System.out.println();
 				System.out.print("Origem: ");
 				ChessPosition source = UI.readChessPosition(sc);
