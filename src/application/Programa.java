@@ -18,7 +18,7 @@ public class Programa {
 		ChessMatch chessMatch = new ChessMatch();
 		List<ChessPiece> captured = new ArrayList<>();
 
-		while (true) {
+		while (!chessMatch.getcheckMate()) {
 			try {
 				UI.ClearScreen();// chamando método para limpar a tela
 				UI.printMatch(chessMatch, captured);
@@ -48,6 +48,8 @@ public class Programa {
 				sc.nextLine();// para o programa aguardar o input ENTER
 			}
 		}
+		UI.ClearScreen();
+		UI.printMatch(chessMatch, captured);
 
 	}
 }
