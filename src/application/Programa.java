@@ -40,6 +40,12 @@ public class Programa {
 					captured.add(capturedPiece);
 				}
 				
+				if(chessMatch.getPromoted() != null) {
+					System.out.println("Digite para qual quer promover(B/N/R/Q)");
+					String type = sc.nextLine();
+					chessMatch.replacePromotedPiece(type);
+				}
+				
 			} catch (ChessException e) {
 				System.out.println(e.getMessage());
 				sc.nextLine();// para o programa aguardar o input ENTER
